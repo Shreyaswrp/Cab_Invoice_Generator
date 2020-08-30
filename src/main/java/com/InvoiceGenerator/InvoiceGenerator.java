@@ -3,20 +3,28 @@ package com.InvoiceGenerator;
 public class InvoiceGenerator {
 
 
-    double costPrekilometer = 10;
-    int minimumCost = 5;
-    int costPerMinute = 1;
+    public RideStorage rideStorage = new RideStorage();
 
-    public InvoiceDetails calculateTotalFare(RideDetails[] rides) {
+    public double calculateFare(RideDetails ride, RideType type) {
+        return type.calculateFare(ride);
+    }
+
+    public InvoiceDetails calculateFare(RideDetails[] rides, RideType type) {
         double totalFare = 0;
         for (RideDetails ride : rides) {
-            totalFare += calculateFare(ride);
+            totalFare += this.calculateFare(ride, type);
         }
         return new InvoiceDetails(rides.length, totalFare);
     }
-    public double calculateFare(RideDetails ride) {
-        double totalFare = ride.distance * costPrekilometer + ride.time * costPerMinute;
-        return Math.max(totalFare, minimumCost);
+
+
+    public void addRiders(String userId, RideDetails[] rides) {
+
+        rideStorage.addRides(userId, rides);
+    }
+
+    public InvoiceDetails getInvoiceSummary(String userId, RideType type) {
+        return this.calculateFare(rideStorage.getRiders(userId), type);
     }
 
 }

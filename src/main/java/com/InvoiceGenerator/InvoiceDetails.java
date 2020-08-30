@@ -1,6 +1,7 @@
 package com.InvoiceGenerator;
 
 public class InvoiceDetails {
+
     private final int noOfRides;
     private final double totalFare;
     private final double average;

@@ -2,14 +2,14 @@ package com.InvoiceGenerator;
 
 public class InvoiceSummary {
 
-    private final int noOfRides;
-    private final double totalFare;
-    private final double average;
+    private final int NO_OF_RIDES;
+    private final double TOTAL_FARE;
+    private final double AVERAGE;
 
     public InvoiceSummary(int noOfRides, double totalFare) {
-        this.noOfRides = noOfRides;
-        this.totalFare = totalFare;
-        this.average = this.totalFare / this.noOfRides;
+        this.NO_OF_RIDES = noOfRides;
+        this.TOTAL_FARE = totalFare;
+        this.AVERAGE = this.TOTAL_FARE / this.NO_OF_RIDES;
     }
 
     @Override
@@ -17,9 +17,9 @@ public class InvoiceSummary {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceSummary that = (InvoiceSummary) o;
-        return noOfRides == that.noOfRides &&
-                totalFare == that.totalFare &&
-                average == that.average;
+        return NO_OF_RIDES == that.NO_OF_RIDES &&
+                TOTAL_FARE == that.TOTAL_FARE &&
+                AVERAGE == that.AVERAGE;
     }
 }
 

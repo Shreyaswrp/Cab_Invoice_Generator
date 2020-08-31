@@ -17,7 +17,7 @@ public class InvoiceServiceTest {
     public void givenLessDistanceAndTime_WhenNormal_ShouldReturnMinimumFare() {
         double distance = 0.1;
         int time = 1;
-        double totalFare = invoiceService.calculateFare(new Ride(distance, time), CabRide.Normal);
+        double totalFare = CabRide.Normal.calculateFare(new Ride(distance, time));
         Assert.assertEquals(5, totalFare, 0.0);
     }
 
@@ -25,7 +25,7 @@ public class InvoiceServiceTest {
     public void givenLessDistanceAndTime_WhenPremium_ShouldReturnMinimumFare() {
         double distance = 0.1;
         int time = 1;
-        double totalFare = invoiceService.calculateFare(new Ride(distance, time), CabRide.Premium);
+        double totalFare = CabRide.Premium.calculateFare(new Ride(distance, time));
         Assert.assertEquals(20, totalFare, 0.0);
     }
     @Test

@@ -4,16 +4,11 @@ public class InvoiceService {
 
     public RideRepository rideStorage = new RideRepository();
 
-    //to calculate fare based on ride type
-    public double calculateFare(Ride ride, CabRide type) {
-        return type.calculateFare(ride);
-    }
-
     //to generate invoice at the end of the month
     public InvoiceSummary generateInvoice(Ride[] rides, CabRide type) {
         double totalFare = 0;
         for (Ride ride : rides) {
-            totalFare += this.calculateFare(ride, type);
+            totalFare += type.calculateFare(ride);
         }
         return new InvoiceSummary(rides.length, totalFare);
     }

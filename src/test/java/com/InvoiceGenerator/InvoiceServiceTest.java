@@ -9,8 +9,6 @@ public class InvoiceServiceTest {
     InvoiceService invoiceService = null;
     private RideRepository rideRepository = null;
     Ride[] rides = null;
-    double distance;
-    int time;
 
     @Before
     public void setup() {
@@ -18,18 +16,36 @@ public class InvoiceServiceTest {
         rideRepository = new RideRepository();
         invoiceService.setRideRepository(rideRepository);
         rides = new Ride[]{new Ride(2.0, 5), new Ride(0.1, 1)};
-        distance = 0.1;
-        time = 1;
+    }
+
+    @Test
+    public void givenDistanceAndTime_WhenNormal_ShouldReturnTotalFare() {
+        double distance = 2.0;
+        int time = 5;
+        double totalFare = CabRide.Normal.calculateTotalFare(new Ride(distance, time));
+        Assert.assertEquals(25, totalFare, 0.0);
+    }
+
+    @Test
+    public void givenDistanceAndTime_WhenPremium_ShouldReturnTotalFare() {
+        double distance = 2.0;
+        int time = 5;
+        double totalFare = CabRide.Premium.calculateTotalFare(new Ride(distance, time));
+        Assert.assertEquals(40, totalFare, 0.0);
     }
 
     @Test
     public void givenLessDistanceAndTime_WhenNormal_ShouldReturnMinimumFare() {
+        double distance = 0.1;
+        int time = 1;
         double totalFare = CabRide.Normal.calculateFare(new Ride(distance, time));
         Assert.assertEquals(5, totalFare, 0.0);
     }
 
     @Test
     public void givenLessDistanceAndTime_WhenPremium_ShouldReturnMinimumFare() {
+        double distance = 0.1;
+        int time = 1;
         double totalFare = CabRide.Premium.calculateFare(new Ride(distance, time));
         Assert.assertEquals(20, totalFare, 0.0);
     }

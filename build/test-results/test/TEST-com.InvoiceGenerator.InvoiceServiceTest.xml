@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.InvoiceGenerator.InvoiceServiceTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2020-09-02T15:27:21" hostname="poonia-Lenovo-Z50-70" time="0.073">
+  <properties/>
+  <testcase name="givenLessDistanceAndTime_WhenNormal_ShouldReturnMinimumFare" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.002"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsNullForTypePremium_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenDistanceAndTime_WhenExpectedTotalFareIsWrongForTypeNormal_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.02"/>
+  <testcase name="givenMultipleRides_WhenPremium_ShouldReturnInvoiceSummary" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.026"/>
+  <testcase name="givenLessDistanceAndTime_WhenExpectedMinimumFareIsWrongForTypeNormal_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenMultipleRides_WhenExpectedInvoiceSummaryIsWrongForTypePremium_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsWrongForTypePremium_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenUserIdAndRides_WhenPremiumType_ShouldReturnInvoiceSummary" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenDistanceAndTime_WhenNormal_ShouldReturnTotalFare" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenLessDistanceAndTime_WhenPremium_ShouldReturnMinimumFare" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsEmptyForTypePremium_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenUserIdAndRides_WhenNormalType_ShouldReturnInvoiceSummary" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenMultipleRides_WhenExpectedInvoiceSummaryIsWrongForTypeNormal_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenLessDistanceAndTime_WhenExpectedMinimumFareIsWrongForTypePremium_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenDistanceAndTime_WhenPremium_ShouldReturnTotalFare" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.001"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsWrongForTypeNormal_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.002"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsNullForTypeNormal_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenUserIdAndRides_WhenUserIdIsEmptyForTypeNormal_ShouldThrowNullPointerException" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenDistanceAndTime_WhenExpectedTotalFareIsWrongForTypePremium_ShouldThrowAssertionError" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenMultipleRides_WhenNormal_ShouldReturnInvoiceSummary" classname="com.InvoiceGenerator.InvoiceServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

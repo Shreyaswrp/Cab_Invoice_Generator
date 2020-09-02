@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+
 public class InvoiceServiceTest {
 
     InvoiceService invoiceService = null;
@@ -172,4 +173,5 @@ public class InvoiceServiceTest {
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
     }
+
 }

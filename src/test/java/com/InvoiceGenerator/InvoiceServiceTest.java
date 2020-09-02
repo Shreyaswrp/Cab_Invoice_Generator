@@ -11,6 +11,7 @@ public class InvoiceServiceTest {
     InvoiceService invoiceService = null;
     private RideRepository rideRepository = null;
     Ride[] rides = null;
+    String userId = null;
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
@@ -20,6 +21,8 @@ public class InvoiceServiceTest {
         rideRepository = new RideRepository();
         invoiceService.setRideRepository(rideRepository);
         rides = new Ride[]{new Ride(2.0, 5), new Ride(0.1, 1)};
+        userId = "shreyaswrp";
+        rideRepository.addRides(userId, rides);
     }
 
     @Test
@@ -116,8 +119,6 @@ public class InvoiceServiceTest {
 
     @Test
     public void givenUserIdAndRides_WhenNormalType_ShouldReturnInvoiceSummary() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(userId, CabRide.Normal);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -125,8 +126,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsWrongForTypeNormal_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary("shreyaswaroop", CabRide.Normal);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -134,8 +133,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsNullForTypeNormal_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(null, CabRide.Normal);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -143,8 +140,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsEmptyForTypeNormal_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(" ", CabRide.Normal);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -152,8 +147,6 @@ public class InvoiceServiceTest {
 
     @Test
     public void givenUserIdAndRides_WhenPremiumType_ShouldReturnInvoiceSummary() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(userId, CabRide.Premium);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 60);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -161,8 +154,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsWrongForTypePremium_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary("shreyaswaroop", CabRide.Premium);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -170,8 +161,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsNullForTypePremium_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(null, CabRide.Premium);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
@@ -179,8 +168,6 @@ public class InvoiceServiceTest {
 
     @Test(expected = NullPointerException.class)
     public void givenUserIdAndRides_WhenUserIdIsEmptyForTypePremium_ShouldThrowNullPointerException() {
-        String userId = "shreyaswrp";
-        rideRepository.addRides(userId, rides);
         InvoiceSummary invoiceSummary = invoiceService.getInvoiceSummary(" ", CabRide.Premium);
         InvoiceSummary expectedSummary = new InvoiceSummary(2, 30);
         Assert.assertEquals(expectedSummary, invoiceSummary);
